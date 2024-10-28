@@ -1,12 +1,8 @@
-rootProject.name = "com.crowdproj.marketplace"
-//include("m1l1-hello") TODO: Then here we can include other modules
+rootProject.name = "crowdproj-rs-temp"
+
+includeBuild("crowdproj-rs-temp-back")
 
 pluginManagement {
-    val kotlinVersion: String by settings
-    plugins {
-        kotlin("jvm") version kotlinVersion apply false
-    }
-
     repositories {
         gradlePluginPortal()
         google()

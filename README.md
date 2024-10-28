@@ -1,0 +1,1 @@
+# crowdproj-rs-template

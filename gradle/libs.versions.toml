@@ -1,0 +1,106 @@
+[versions]
+# plugins
+kotlin = "1.9.21"
+dokka = "1.8.20"
+kotlinx-serialization = "1.6.2"
+muschko = "9.3.3"
+crowdproj-generator = "0.2.0"
+binaryCompabilityValidator = "0.13.2"
+#toolchainsResolver = "0.5.0"
+detekt = "1.23.1"
+mavenPublish = "0.25.3"
+
+# libs
+coroutines = "1.7.3"
+logback = "1.4.14"
+ktor = "2.3.7"
+
+# BASE
+jvm-compiler = "21"
+jvm-language = "21"
+
+#Compose
+android-libs = "8.2.0"
+sdk-min = "26"
+sdk-compile = "34"
+androidx-compose-bom = "2023.09.02"
+#androidx-compose-bom = "2023.06.01"
+compose = "1.5.11"
+
+#DB
+arcadedb = "23.10.1"
+testcontainers = "1.19.3"
+
+[libraries]
+plugin-kotlin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+plugin-dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dokka" }
+plugin-binaryCompatibilityValidator = { module = "org.jetbrains.kotlinx:binary-compatibility-validator", version.ref = "binaryCompabilityValidator" }
+#plugin-detekt = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+#plugin-detektFormatting = { module = "io.gitlab.arturbosch.detekt:detekt-formatting", version.ref = "detekt"}
+plugin-mavenPublish = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "mavenPublish" }
+
+kotlinx-serialization-core = { module = "org.jetbrains.kotlinx:kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx-serialization" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+atomicfu = { module = "org.jetbrains.kotlinx:atomicfu", version = "0.23.1" }
+datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version = "0.4.1" }
+cor = { module = "com.crowdproj:kotlin-cor", version = "0.5.7" }
+
+#general
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+logback-access = { module = "ch.qos.logback:logback-access", version.ref = "logback" }
+slf4j = "org.slf4j:slf4j-api:2.0.9"
+uuid = "com.benasher44:uuid:0.8.1"
+cache4k = "io.github.reactivecircus.cache4k:cache4k:0.12.0"
+
+#compose
+#androidx-compose-bom = { module = "androidx.compose:compose-bom", version.ref = "androidx-compose-bom" }
+#compose-activity = "androidx.activity:activity-compose:1.7.2"
+compose-activity = "androidx.activity:activity-compose:1.8.2"
+
+# android
+androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
+androidx-core = "androidx.core:core-ktx:1.12.0"
+
+#ktor
+ktor-serialization = { module = "io.ktor:ktor-serialization", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+
+#ktor-server
+ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
+ktor-server-cio = { module = "io.ktor:ktor-server-cio", version.ref = "ktor" }
+ktor-server-cors = { module = "io.ktor:ktor-server-cors", version.ref = "ktor" }
+ktor-server-auth = { module = "io.ktor:ktor-server-auth", version.ref = "ktor" }
+ktor-server-caching-headers = { module = "io.ktor:ktor-server-caching-headers", version.ref = "ktor" }
+ktor-server-auto-head-response = { module = "io.ktor:ktor-server-auto-head-response", version.ref = "ktor" }
+ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
+ktor-server-call-id = { module = "io.ktor:ktor-server-call-id", version.ref = "ktor" }
+ktor-server-config-yaml = { module = "io.ktor:ktor-server-config-yaml", version.ref = "ktor" }
+ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
+
+#ktor-client
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktor" }
+ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
+ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+
+#gremlin
+gremlin = { module = "org.apache.tinkerpop:gremlin-driver", version = "3.6.3" }
+arcadedb-engine = { module = "com.arcadedb:arcadedb-engine", version.ref = "arcadedb" }
+arcadedb-network = { module = "com.arcadedb:arcadedb-network", version.ref = "arcadedb" }
+arcadedb-gremlin = { module = "com.arcadedb:arcadedb-gremlin", version.ref = "arcadedb" }
+test-containers = {module = "org.testcontainers:testcontainers", version.ref = "testcontainers"}
+
+[plugins]
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlinx-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+crowdproj-generator = { id = "com.crowdproj.generator", version.ref = "crowdproj-generator" }
+muschko-remote-api = { id = "com.bmuschko.docker-remote-api", version.ref = "muschko" }
+android-application = { id = "com.android.application", version.ref = "android-libs" }
+android-library = { id = "com.android.library", version.ref = "android-libs" }
+compose = { id = "org.jetbrains.compose", version.ref = "compose" }

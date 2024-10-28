@@ -1,33 +1,28 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    kotlin("jvm")
+    id("com.crowdproj.plugin.autoversion") version "0.0.5"
+    alias(libs.plugins.kotlin.jvm) apply false
+    alias(libs.plugins.kotlin.multiplatform) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.compose) apply false
 }
 
-group = "com.crowdproj.marketplace"
-version = "0.0.1"
+group = "com.crowdproj.rs.temp"
+version = "1.0-SNAPSHOT"
+
+repositories {
+    mavenCentral()
+}
+
+autoversion {
+    shoudIncrement.set(false)
+}
 
 allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url = uri("https://jitpack.io") }
+        maven("https://maven.pkg.jetbrains.space/public/p/compose/dev")
     }
-}
-
-subprojects {
-    this.group = group
-    this.version = version
-
-    tasks.withType<KotlinCompile> {
-        val jvmTarget: String by project
-        kotlinOptions.jvmTarget = jvmTarget
-    }
-}
-
-tasks.wrapper {
-    gradleVersion = "8.10.2"
-    // You can either download the binary-only version of Gradle (BIN) or
-    // the full version (with sources and documentation) of Gradle (ALL)
-    distributionType = Wrapper.DistributionType.ALL
 }
