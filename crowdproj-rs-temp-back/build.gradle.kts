@@ -1,3 +1,6 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     alias(libs.plugins.kotlin.jvm) apply false
     alias(libs.plugins.kotlin.multiplatform) apply false
@@ -11,9 +14,9 @@ repositories {
     mavenCentral()
 }
 
-//val ktJvmPluginId: String = libs.plugins.kotlin.jvm.get().pluginId
-//val ktKmpPluginId: String = libs.plugins.kotlin.multiplatform.get().pluginId
-//val jvmTarget: String = libs.versions.jvm.compiler.get()
+val ktJvmPluginId: String = libs.plugins.kotlin.jvm.get().pluginId
+val ktKmpPluginId: String = libs.plugins.kotlin.multiplatform.get().pluginId
+val jvmTarget: String = libs.versions.jvm.compiler.get()
 
 subprojects {
     this.group = rootProject.group
@@ -23,12 +26,12 @@ subprojects {
         mavenLocal()
         mavenCentral()
     }
-//    tasks.withType<KotlinJvmCompile> {
-//        kotlinOptions.jvmTarget = jvmTarget
-//    }
-//    tasks.withType<KotlinCompile> {
-//        kotlinOptions.jvmTarget = jvmTarget
-//    }
+    tasks.withType<KotlinJvmCompile> {
+        kotlinOptions.jvmTarget = jvmTarget
+    }
+    tasks.withType<KotlinCompile> {
+        kotlinOptions.jvmTarget = jvmTarget
+    }
 }
 
 afterEvaluate {

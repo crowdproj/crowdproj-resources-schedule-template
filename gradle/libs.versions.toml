@@ -16,8 +16,8 @@ logback = "1.4.14"
 ktor = "2.3.7"
 
 # BASE
-jvm-compiler = "21"
-jvm-language = "21"
+jvm-compiler = "11"
+jvm-language = "17"
 
 #Compose
 android-libs = "8.2.0"
