@@ -1,31 +1,10 @@
-.gradle
-build/
+.gradle/
+.kotlin/
+**/build/
 !gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+!**/src/**/build/
 
-kotlin-js-store
+**/*.hprof
 
-### IntelliJ IDEA ###
-.idea/*
-*.iws
-*.iml
-*.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
-
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
-
-### NetBeans ###
-/nbproject/private/
+/.idea/
+/kotlin-js-store/
